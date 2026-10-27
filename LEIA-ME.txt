@@ -1,0 +1,19 @@
+ATUALIZAÇÃO: LINHA DO TEMPO DE FORMAÇÃO E RECONHECIMENTOS
+
+Este pacote altera apenas dois arquivos do portfólio:
+- index.html
+- assets/css/style.css
+
+Como aplicar:
+1. Faça uma cópia de segurança dos arquivos atuais.
+2. Extraia este ZIP.
+3. Copie index.html para a raiz do seu repositório local (a pasta portfolio), substituindo o arquivo existente.
+4. Copie assets/css/style.css para portfolio/assets/css/style.css, substituindo o arquivo existente.
+5. Não substitua a página cybersecurity/index.html.
+6. Abra o site com Live Server e confira a seção Formação & Reconhecimentos.
+7. Para publicar, no terminal do VS Code execute:
+   git add index.html assets/css/style.css
+   git commit -m "Adiciona linha do tempo de formação e reconhecimentos"
+   git push
+
+Links adicionados com base nas URLs fornecidas pelo usuário. O bootcamp de 2026 é descrito sem afirmar que foi concluído.

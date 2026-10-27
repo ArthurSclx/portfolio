@@ -1,0 +1,1 @@
+Adicione imagens de perfil, banners ou capturas de projetos nesta pasta. Antes de publicar, confirme que todas as imagens estão autorizadas para compartilhamento e não mostram informações confidenciais.

@@ -12,8 +12,9 @@
   const body = document.body;
   const replayButton = document.getElementById('replay-intro');
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const glyphs = '0123456789ABCDEF<>/\\[]{}#$%';
-  const colors = ['#ff8ce8', '#f7b6ff', '#ba9cff', '#a9f9ff'];
+  // A caveira segue a referência: formada por pequenos dígitos 3 em tons de branco.
+  const glyphs = '3';
+  const colors = ['#ffffff', '#f2f2f2', '#dedede', '#c8c8c8'];
   let introRoot = null;
   let animationFrame = 0;
   let introRunning = false;
@@ -130,7 +131,6 @@
     let width = 0;
     let height = 0;
     let dpr = 1;
-    let rain = [];
     let targets = [];
     const start = performance.now();
     const assembleDuration = 2050;
@@ -157,34 +157,12 @@
         delay: point.delay,
         startX: random(-width * 0.1, width * 1.1),
         startY: random(-height * 0.15, height * 1.15),
-        size: random(7, 10.5)
+        size: random(6.8, 8.2)
       }));
-      const fontSize = 12;
-      rain = [];
-      for (let x = -5; x < width + 20; x += 22) {
-        rain.push({ x, y: random(-height, height), speed: random(0.6, 2.0), length: Math.floor(random(4, 11)), fontSize });
-      }
     }
     resize();
     window.addEventListener('resize', resize, { passive: true });
 
-    function drawRain() {
-      ctx.save();
-      ctx.font = '11px monospace';
-      ctx.textAlign = 'center';
-      rain.forEach(column => {
-        column.y += column.speed;
-        if (column.y > height + 100) column.y = random(-height, -20);
-        for (let i = 0; i < column.length; i++) {
-          const y = column.y - i * column.fontSize;
-          if (y < -20 || y > height + 20) continue;
-          ctx.globalAlpha = (1 - i / column.length) * 0.21;
-          ctx.fillStyle = i === 0 ? '#ff9deb' : (i % 4 === 0 ? '#a9f9ff' : '#9d65c8');
-          ctx.fillText(pick(glyphs), column.x, y);
-        }
-      });
-      ctx.restore();
-    }
 
     function finish(skip = false) {
       if (!introRunning) return;
@@ -214,7 +192,6 @@
       if (!introRunning) return;
       const elapsed = now - start;
       ctx.clearRect(0, 0, width, height);
-      drawRain();
 
       const assemble = clamp(elapsed / assembleDuration);
       const easedOverall = easeOut(assemble);

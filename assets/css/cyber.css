@@ -4,28 +4,28 @@
 
 /* ===== CYBER INTRO: caveira formada por caracteres + glitches discretos ===== */
 .cyber-body.cyber-intro-lock{overflow:hidden}
-.cyber-intro{position:fixed;inset:0;z-index:10000;overflow:hidden;background:#09020f;color:#f8e9ff;isolation:isolate;opacity:1;transition:opacity .48s ease; font-family:"DM Mono",Consolas,monospace}
+.cyber-intro{position:fixed;inset:0;z-index:10000;overflow:hidden;background:#000;color:#f7f7f7;isolation:isolate;opacity:1;transition:opacity .48s ease;font-family:"DM Mono",Consolas,monospace}
 .cyber-intro.is-closing{opacity:0;pointer-events:none}
-.cyber-intro::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:repeating-linear-gradient(to bottom,rgba(246,151,255,.045) 0,rgba(246,151,255,.045) 1px,transparent 1px,transparent 4px);opacity:.9}
-.cyber-intro::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at center,transparent 30%,rgba(3,0,8,.42) 100%),linear-gradient(90deg,rgba(126,25,155,.06),transparent 25%,transparent 75%,rgba(255,73,200,.05)}
+.cyber-intro::before{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:repeating-linear-gradient(to bottom,rgba(255,255,255,.035) 0,rgba(255,255,255,.035) 1px,transparent 1px,transparent 4px);opacity:.65}
+.cyber-intro::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at center,transparent 30%,rgba(0,0,0,.55) 100%),linear-gradient(90deg,rgba(255,255,255,.012),transparent 25%,transparent 75%,rgba(255,255,255,.012)}
 .cyber-intro-canvas{position:absolute;inset:0;display:block;width:100%;height:100%;z-index:0}
-.cyber-intro-vignette{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at center,rgba(29,7,43,.05) 0%,rgba(10,2,17,.18) 52%,rgba(5,1,10,.8) 100%)}
+.cyber-intro-vignette{position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at center,rgba(255,255,255,.015) 0%,rgba(0,0,0,.12) 52%,rgba(0,0,0,.72) 100%)}
 .cyber-intro-hud{position:absolute;inset:0;z-index:3;pointer-events:none}
-.cyber-intro-topline{position:absolute;top:clamp(19px,4vh,42px);left:clamp(18px,4vw,58px);right:clamp(18px,4vw,58px);display:flex;justify-content:space-between;gap:16px;color:rgba(245,198,255,.67);font-size:clamp(8px,.85vw,10px);letter-spacing:.14em}
+.cyber-intro-topline{position:absolute;top:clamp(19px,4vh,42px);left:clamp(18px,4vw,58px);right:clamp(18px,4vw,58px);display:flex;justify-content:space-between;gap:16px;color:rgba(235,235,235,.62);font-size:clamp(8px,.85vw,10px);letter-spacing:.14em}
 .cyber-intro-brand{display:inline-flex;align-items:center;gap:9px}
-.cyber-intro-brand i{display:inline-block;width:6px;height:6px;border-radius:50%;background:#ff83e4;box-shadow:0 0 13px #ff83e4;animation:cyber-status-pulse 1.3s steps(2,end) infinite}
-.cyber-intro-brand b{color:#a78bfa;font-weight:400}
-.cyber-intro-title{position:absolute;top:clamp(72px,13vh,128px);left:16px;right:16px;margin:0;text-align:center;font-size:clamp(10px,1.4vw,14px);letter-spacing:.32em;color:rgba(255,226,255,.64)}
-.cyber-intro-title span{color:#ff8ce8}
+.cyber-intro-brand i{display:inline-block;width:6px;height:6px;border-radius:50%;background:#f3f3f3;box-shadow:0 0 10px rgba(255,255,255,.7);animation:cyber-status-pulse 1.3s steps(2,end) infinite}
+.cyber-intro-brand b{color:#aaa;font-weight:400}
+.cyber-intro-title{position:absolute;top:clamp(72px,13vh,128px);left:16px;right:16px;margin:0;text-align:center;font-size:clamp(10px,1.4vw,14px);letter-spacing:.32em;color:rgba(245,245,245,.68)}
+.cyber-intro-title span{color:#fff}
 .cyber-intro-bottom{position:absolute;left:clamp(20px,7vw,100px);right:clamp(20px,7vw,100px);bottom:clamp(37px,7vh,72px);max-width:480px;margin:auto;text-align:center}
-.cyber-intro-bottom p{margin:0;color:#ffb4f0;font-size:clamp(9px,1vw,11px);letter-spacing:.07em;text-shadow:0 0 12px rgba(250,106,231,.4)}
-.cyber-intro-progressbar{height:2px;margin:14px auto 12px;max-width:350px;background:rgba(240,160,255,.15);overflow:hidden}
-.cyber-intro-progressbar span{display:block;width:0;height:100%;background:linear-gradient(90deg,#a78bfa,#ff83e4,#a9f9ff);box-shadow:0 0 11px #ff83e4;transition:width .08s linear}
-.cyber-intro-bottom .cyber-intro-footnote{font-size:8px;color:rgba(223,183,236,.47);letter-spacing:.17em}
-.cyber-intro-skip{position:absolute;right:clamp(18px,4vw,58px);bottom:clamp(17px,3vh,30px);pointer-events:auto;cursor:pointer;border:1px solid rgba(238,151,255,.28);background:rgba(24,7,34,.56);color:rgba(255,218,255,.78);padding:9px 12px;font:9px "DM Mono",Consolas,monospace;letter-spacing:.08em;transition:background .2s,border-color .2s,color .2s}
-.cyber-intro-skip:hover,.cyber-intro-skip:focus-visible{background:rgba(129,36,153,.32);border-color:#ff8ce8;color:#fff;outline:none}
-.cyber-intro-skip span{color:#b69bbf;margin-left:6px}
-.cyber-intro-corner{position:absolute;left:clamp(18px,4vw,58px);bottom:clamp(22px,3vh,32px);font-size:8px;letter-spacing:.16em;color:rgba(221,174,236,.32)}
+.cyber-intro-bottom p{margin:0;color:#ededed;font-size:clamp(9px,1vw,11px);letter-spacing:.07em;text-shadow:0 0 8px rgba(255,255,255,.12)}
+.cyber-intro-progressbar{height:2px;margin:14px auto 12px;max-width:350px;background:rgba(255,255,255,.16);overflow:hidden}
+.cyber-intro-progressbar span{display:block;width:0;height:100%;background:linear-gradient(90deg,#888,#fff,#d4d4d4);box-shadow:0 0 10px rgba(255,255,255,.5);transition:width .08s linear}
+.cyber-intro-bottom .cyber-intro-footnote{font-size:8px;color:rgba(220,220,220,.43);letter-spacing:.17em}
+.cyber-intro-skip{position:absolute;right:clamp(18px,4vw,58px);bottom:clamp(17px,3vh,30px);pointer-events:auto;cursor:pointer;border:1px solid rgba(255,255,255,.22);background:rgba(12,12,12,.7);color:rgba(255,255,255,.78);padding:9px 12px;font:9px "DM Mono",Consolas,monospace;letter-spacing:.08em;transition:background .2s,border-color .2s,color .2s}
+.cyber-intro-skip:hover,.cyber-intro-skip:focus-visible{background:rgba(255,255,255,.08);border-color:#fff;color:#fff;outline:none}
+.cyber-intro-skip span{color:#aaa;margin-left:6px}
+.cyber-intro-corner{position:absolute;left:clamp(18px,4vw,58px);bottom:clamp(22px,3vh,32px);font-size:8px;letter-spacing:.16em;color:rgba(210,210,210,.3)}
 .cyber-intro.is-glitching .cyber-intro-canvas{animation:cyber-intro-jitter .12s steps(2,end) 2}
 .cyber-intro.is-glitching .cyber-intro-title{color:#fff;text-shadow:3px 0 #ff4edb,-3px 0 #54e8ff}
 @keyframes cyber-status-pulse{50%{opacity:.25;box-shadow:none}}
